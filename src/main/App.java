@@ -7,6 +7,7 @@ import functions.*;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
+	Administracion admin = new Administracion();
         boolean dc = true;
         int menu = -1;
         
@@ -19,16 +20,6 @@ public class App {
 
         System.out.println("BIENVENIDO AL SISTEMA DE GESTIÓN DE PROCESOS\nCREADO POR MACREBOT\n");
         while (dc){
-
-            // Muestra los Gestores creados, si no hay, muestra que no hay ninguno creado
-            // Gestores FIFO creados
-
-            // Gestores FCFS creados
-
-            // Gestores SJF creados
-
-            // Gestores SRFT creados
-
 
             // Muestras las opciones para hacer. Si escoge una opción inexistente, se repetirá el proceso
             while (menu < 1 || menu > 6) {
@@ -44,8 +35,30 @@ public class App {
             // Ejecución de la opción decidida
             switch (menu) {
                 case 1:
-
+		    admin.crearGestor();
                     break;
+
+		case 2:
+		    System.out.println("Introduce el nombre del Gestor");
+		    admin.crearGestor(sc.nextLine());
+		    break;
+
+		case 3:
+		    admin.mostrarGestores();
+		    break;
+
+		case 4:
+		    admin.editarGestor();
+		    break;
+
+		case 5:
+		    System.out.println("Introduce el nombre del Gestor a eliminar.");
+		    admin.borrarGestor();
+		    break;
+
+		case 6:
+		    dc = false;
+		    break;
             
                 default:
                     break;
