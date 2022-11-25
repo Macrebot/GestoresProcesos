@@ -10,11 +10,12 @@ public class Fifo extends General{
     }
 
     public Fifo (String nombre) {
-        super(nombre, "Fifo");
+        super(nombre, "FIFO");
     }
 
     public void ordenarFifo () {
-        tabla.add(new ArrayList<Character>());
+        // Tabla bidimensional para la simulación de los procesos
+        // tabla.add(new ArrayList<Character>());
 
         /* Un bucle que recorrerá toda la tabla para simular la
         ejecución de los procesos */
@@ -22,7 +23,8 @@ public class Fifo extends General{
         // Bucle que recorrerá horizontalmente la tabla
         for (int i = 0; i < 6; i++) {
 
-            if(tiempoEjecucionRestante < 1) {
+            // Comprueba que el proceso ejecutandose ahora no ha acabado
+            if(tiempoEjecucionRestante < 1 && procesoEjecutandose != -1) {
 
                 // Se calcula el índice de penalización del proceso
                 procesos[procesoEjecutandose].setIndicePenalizacion();
@@ -45,7 +47,7 @@ public class Fifo extends General{
                     procesoEjecutandose = procesosEnFila.getFirst();
 
                     // Declara el tiempo de espera que tuvo que hacer para ejecutarse
-                    procesos[j].setTiempoEspera(i - procesos[j].getTiempoLlegada());
+                    procesos[procesoEjecutandose].setTiempoEspera(i - procesos[j].getTiempoLlegada());
 
                     // Declara el tiempo de ejecución que tardará el proceso en terminar
                     tiempoEjecucionRestante = procesos[j].getTiempoEjecucion();
@@ -67,14 +69,20 @@ public class Fifo extends General{
             tiempoEjecucionRestante--;
 
         }
+        
     }
 
     public void impresionTablaGeneral () {
         System.out.println("Proceso\tTiempo de Llegada\t" +
             "Tiempo de ejecución\tTiempo de Espera\tTiempo de" +
             " retorno\tÍndice de penalización\n");
-        for (char[] iterable : tablaGeneral) {
-            System.out.println(iterable);
+        for (Proceso iterable : procesos) {
+            System.out.println(iterable.getNombreProceso() + "\t|\t" +
+                iterable.getTiempoLlegada() + "\t\t|\t" +
+                iterable.getTiempoEjecucion() + "\t\t|\t" + 
+                iterable.getTiempoEspera() + "\t\t|\t" +
+                iterable.getTiempoRetorno() + "\t\t|\t" +
+                iterable.getIndicePenalizacion() + "\t\t|\n");
         }
     }
     

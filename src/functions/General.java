@@ -12,8 +12,8 @@ abstract class General {
 
     // Variables para realizar los cálculos de los procesos
     protected int procesoEjecutandose = -1;
-    protected LinkedList<Integer> procesosEnFila;
-    protected int tiempoEjecucionRestante;
+    protected LinkedList<Integer> procesosEnFila = new LinkedList<Integer>();
+    protected int tiempoEjecucionRestante = 0;
 
     /* Arreglo que se usará para mostrar una tabla con todos los
     valores de todos los procesos */
@@ -69,6 +69,7 @@ abstract class General {
             procesos[i] = new Proceso(nombreProceso, tiempoLlegada, tiempoEjecucion);
             System.out.println("Proceso " + (i+1) + " creado con éxito.");
         }
+        
         System.out.println("Lista de procesos creada con éxito.");
     }
     
@@ -83,8 +84,8 @@ abstract class General {
 
     // Constructor con los valores asignados por el usuario
     General (String nombre, String tipo) {
-        nombre = this.nombre;
-        tipo = this.tipo;
+        this.nombre = nombre;
+        this.tipo = tipo;
         fechaCreacion = LocalDateTime.now();
 
         creacionProcesos();
@@ -99,7 +100,7 @@ abstract class General {
 
     // Setter del nombre identificativo
     public void setNombre (String nombre){
-        nombre = this.nombre;
+        this.nombre = nombre;
     }
 
     // Métodos para las variables del Gestor de Procesos

@@ -2,9 +2,13 @@ package functions;
 
 public class Sjf extends General{
 
-    Sjf(String nombreProceso, int tiempoLlegada, int tiempoEjecucion) {
-        super(nombreProceso, tiempoLlegada, tiempoEjecucion);
-        //TODO Auto-generated constructor stub
+    public Sjf () {
+        super();
     }
+
+    public Sjf (String nombre) {
+        super(nombre, "SJF");
+    }
+
 
 }

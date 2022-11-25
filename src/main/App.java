@@ -7,7 +7,7 @@ import functions.*;
 public class App {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
-	Administracion admin = new Administracion();
+	    Administracion admin = new Administracion();
         boolean dc = true;
         int menu = -1;
         
@@ -35,39 +35,39 @@ public class App {
             // Ejecución de la opción decidida
             switch (menu) {
                 case 1:
-		    admin.crearGestor();
+                    admin.crearGestor();
                     break;
 
-		case 2:
-		    System.out.println("Introduce el nombre del Gestor");
-		    admin.crearGestor(sc.nextLine());
-		    break;
+                case 2:
+                    System.out.println("Introduce el nombre del Gestor");
+                    admin.crearGestor(sc.nextLine());
+                    break;
 
-		case 3:
-		    admin.mostrarGestores();
-		    break;
+                case 3:
+                    admin.mostrarGestores();
+                    break;
 
-		case 4:
-		    admin.editarGestor();
-		    break;
+                case 4:
+                    admin.editarGestor();
+                    break;
 
-		case 5:
-		    System.out.println("Introduce el nombre del Gestor a eliminar.");
-		    admin.borrarGestor();
-		    break;
+                case 5:
+                    System.out.println("Introduce el nombre del Gestor a eliminar.");
+                    admin.borrarGestor();
+                    break;
 
-		case 6:
-		    dc = false;
-		    break;
-            
+                case 6:
+                    dc = false;
+                    break;
+                
                 default:
                     break;
             }
 
-                    
+        menu = -1;
         }
 
 
-
+        sc.close();
     }
 }

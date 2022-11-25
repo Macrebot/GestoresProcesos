@@ -15,9 +15,9 @@ public class Proceso {
     public Proceso (char nombreProceso, int tiempoLlegada, int tiempoEjecucion){
         
         // Valores declarados
-        nombreProceso = this.nombreProceso;
-        tiempoLlegada = this.tiempoLlegada;
-        tiempoEjecucion = this.tiempoEjecucion;
+        this.nombreProceso = nombreProceso;
+        this.tiempoLlegada = tiempoLlegada;
+        this.tiempoEjecucion = tiempoEjecucion;
     }
 
     // Métodos para la gestión del proceso
@@ -33,24 +33,24 @@ public class Proceso {
     // Setters
     // Variables que vendrán declaradas en la creación del objeto
     public void setNombreProceso (char nombreProceso) {
-        nombreProceso = this.nombreProceso;
+        this.nombreProceso = nombreProceso;
     }
 
     public void setTiempoLlegada (int tiempoLlegada) {
-        tiempoLlegada = this.tiempoLlegada;
+        this.tiempoLlegada = tiempoLlegada;
     }
 
     public void setTiempoEjecucion (int tiempoEjecucion){
-        tiempoEjecucion = this.tiempoEjecucion;
+        this.tiempoEjecucion = tiempoEjecucion;
     }
 
     // Variables a calcular a partir de las ya declaradas
     public void setTiempoEspera (int tiempoEspera) {
-        tiempoEspera = this.tiempoEspera;
+        this.tiempoEspera = tiempoEspera;
     }
 
     public void setTiempoRetorno (int tiempoRetorno) {
-        tiempoRetorno = this.tiempoRetorno;
+        this.tiempoRetorno = tiempoRetorno;
     }
 
     public void setIndicePenalizacion () {
