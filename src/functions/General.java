@@ -15,13 +15,12 @@ abstract class General {
     protected LinkedList<Integer> procesosEnFila = new LinkedList<Integer>();
     protected int tiempoEjecucionRestante = 0;
 
-    /* Arreglo que se usará para mostrar una tabla con todos los
-    valores de todos los procesos */
-    protected char tablaGeneral[][];
+    // Arreglo bidimensional para simular la ejecución de los procesos
+    protected char tabla [][];
 
-    /* Arreglo que se usará para mostrar el orden en el que
-    cada proceso se estará ejecutando */
-    protected ArrayList< ArrayList <Character>> tabla;
+    protected int tiempoEjecucionTotal;
+
+    protected int procesosN;
 
     // Variables para identificar el objeto
     private String nombre;
@@ -42,19 +41,18 @@ abstract class General {
     private void creacionProcesos () {
         // Creación del arreglo que guardará los procesos
         System.out.println("¿Cuántos procesos desea crear?:");
-        int procesosN = sc.nextInt();
-
-        /* Creación de la tabla en la que se mostrarán todos los
-        valores, ya que ahora sabemos cuantos procesos van a haber*/
-        tablaGeneral = new char[procesosN][6];
+        procesosN = sc.nextInt();
 
         // Creación de las variables para cada proceso
         char nombreProceso;
         int tiempoLlegada;
         int tiempoEjecucion;
+        tiempoEjecucionTotal = 0;
 
         // Se crea el arreglo con la cantidad de procesos que desea tener
         procesos = new Proceso[procesosN];
+
+        // Se crea uno por uno los procesos
         for (int i = 0; i < procesosN; i++) {
 
             System.out.print("Introduzca el nombre del proceso (carácter): ");
@@ -65,10 +63,15 @@ abstract class General {
 
             System.out.print("Introduzca el tiempo de ejecución del proceso: ");
             tiempoEjecucion = sc.nextInt();
+            tiempoEjecucionTotal += tiempoEjecucion;
 
             procesos[i] = new Proceso(nombreProceso, tiempoLlegada, tiempoEjecucion);
             System.out.println("Proceso " + (i+1) + " creado con éxito.");
         }
+        
+        /* Creación del tamaño de la tabla, que será de alta el número de procesos tenga
+        y de ancha el total de tiempo de ejecución entre todos los procesos*/
+        tabla = new char[tiempoEjecucionTotal + 1][procesosN];
         
         System.out.println("Lista de procesos creada con éxito.");
     }

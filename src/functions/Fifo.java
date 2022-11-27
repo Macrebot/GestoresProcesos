@@ -14,16 +14,13 @@ public class Fifo extends General{
     }
 
     public void ordenarFifo () {
-        // Tabla bidimensional para la simulación de los procesos
-        // tabla.add(new ArrayList<Character>());
-
         /* Un bucle que recorrerá toda la tabla para simular la
         ejecución de los procesos */
 
         // Bucle que recorrerá horizontalmente la tabla
         for (int i = 0; i < 6; i++) {
 
-            // Comprueba que el proceso ejecutandose ahora no ha acabado
+            // Comprueba que el proceso ejecutándose no ha acabado
             if(tiempoEjecucionRestante < 1 && procesoEjecutandose != -1) {
 
                 // Se calcula el índice de penalización del proceso
@@ -37,20 +34,22 @@ public class Fifo extends General{
 
                 // Si encuentra un proceso que debería comenzar a ejecutarse
                 if (procesos[j].getTiempoLlegada() == i) {
-                    procesosEnFila.addLast(j);
-                    
+                    procesosEnFila.addLast(j); // Lo envía al final de la fila
                 }
-                    // Si no hay procesos ya ejecutándose
+                    // Si no hay procesos ejecutándose
                 if (procesoEjecutandose < 0){
 
                     // Toma el primer valor en fila para ejecutarlo
                     procesoEjecutandose = procesosEnFila.getFirst();
 
                     // Declara el tiempo de espera que tuvo que hacer para ejecutarse
-                    procesos[procesoEjecutandose].setTiempoEspera(i - procesos[j].getTiempoLlegada());
+                    procesos[procesoEjecutandose].setTiempoEspera(i - procesos[procesoEjecutandose].getTiempoLlegada());
 
                     // Declara el tiempo de ejecución que tardará el proceso en terminar
-                    tiempoEjecucionRestante = procesos[j].getTiempoEjecucion();
+                    tiempoEjecucionRestante = procesos[procesoEjecutandose].getTiempoEjecucion();
+
+                    // Guarda el proceso en ejecución en su espacio en la tabla
+                    tabla[i][j] = procesos[procesoEjecutandose].getNombreProceso();
 
 
                 } else { // Si hay un proceso ejecutándose, se agrega al final de la fila
@@ -83,6 +82,16 @@ public class Fifo extends General{
                 iterable.getTiempoEspera() + "\t\t|\t" +
                 iterable.getTiempoRetorno() + "\t\t|\t" +
                 iterable.getIndicePenalizacion() + "\t\t|\n");
+        }
+        System.out.println();
+
+        for (int j = 0; j < procesosN; j++){
+
+            for (int i = 0; i < tiempoEjecucionTotal; i++) {
+                System.out.print(tabla[i][j]);
+            }
+            System.out.println();
+
         }
     }
     

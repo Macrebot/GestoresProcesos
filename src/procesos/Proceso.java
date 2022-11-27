@@ -10,7 +10,7 @@ public class Proceso {
     // Variables a calcular a partir de las ya declaradas
     private int tiempoEspera = 0;
     private int tiempoRetorno = 0;
-    private double indicePenalizacion = 0; // Calculada a partir de tiempoRetorno / tiempoLlegada.
+    private double indicePenalizacion = 0; // Calculada a partir de tiempoRetorno / tiempoEjecucion.
 
     public Proceso (char nombreProceso, int tiempoLlegada, int tiempoEjecucion){
         
@@ -54,6 +54,7 @@ public class Proceso {
     }
 
     public void setIndicePenalizacion () {
+        System.out.println("Tiempo Retorno: " + tiempoRetorno + "\nTiempoEjecución: " + tiempoEjecucion);
         indicePenalizacion = (double)tiempoRetorno / (double)tiempoEjecucion;
     }
 
