@@ -64,12 +64,9 @@ public class Proceso {
     }
 
     public void setIndicePenalizacion () {
-        System.out.println("Tiempo Retorno: " + tiempoRetorno + "\nTiempoEjecución: " + tiempoEjecucion);
-
-        System.out.println(indicePenalizacionDecimales);
         /* Toma los dos valores, los combierte a ambos en Double, los divide, el resultado se envía al 
         método round del objeto Math (para delimitar los decimales) y el resultado, lo guarda en indicePenalizacion */
-        indicePenalizacion = Math.round((((double)tiempoRetorno / (double)tiempoEjecucion) * 100d) / 100d);
+        indicePenalizacion = (double)tiempoRetorno / (double)tiempoEjecucion;
     }
 
 }

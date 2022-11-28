@@ -66,14 +66,14 @@ abstract class General {
             tiempoEjecucionTotal += tiempoEjecucion;
 
             procesos[i] = new Proceso(nombreProceso, tiempoLlegada, tiempoEjecucion);
-            System.out.println("Proceso " + (i+1) + " creado con éxito.");
+            System.out.println("Proceso " + (i+1) + " creado con éxito.\n");
         }
         
         /* Creación del tamaño de la tabla, que será de alta el número de procesos tenga
         y de ancha el total de tiempo de ejecución entre todos los procesos*/
         tabla = new char[tiempoEjecucionTotal + 1][procesosN];
         
-        System.out.println("Lista de procesos creada con éxito.");
+        System.out.println("Lista de procesos creada con éxito.\n");
     }
     
     // Constructor con valores por defecto
@@ -178,7 +178,7 @@ abstract class General {
                 iterable.getTiempoEjecucion() + "\t\t|\t" + 
                 iterable.getTiempoEspera() + "\t\t|\t" +
                 iterable.getTiempoRetorno() + "\t\t|\t" +
-                iterable.getIndicePenalizacion() + "\t\t|\n");
+                String.format("%.2f", iterable.getIndicePenalizacion()) + "\t\t|\n");
         }
         System.out.println();
 

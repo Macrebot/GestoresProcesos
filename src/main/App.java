@@ -13,7 +13,7 @@ public class App {
         
         String opciones =   "1. Crear Nuevo Gestor rápido\n" + 
                             "2. Crear Nuevo Gestor detallado\n" + 
-                            "3. Ver todos los Gestores detalladamente\n " + 
+                            "3. Ver todos los Gestores detalladamente\n" + 
                             "4. Editar algún Gestor\n" + 
                             "5. Borra algún Gestor\n" + 
                             "6. Salir del programa\n";
@@ -52,7 +52,6 @@ public class App {
                     break;
 
                 case 5:
-                    System.out.println("Introduce el nombre del Gestor a eliminar.");
                     admin.borrarGestor();
                     break;
 

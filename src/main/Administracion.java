@@ -91,6 +91,7 @@ public class Administracion {
 	
 	switch (decision) {
 	    case 1:
+            decision = 0;
             while (decision < 1 || decision > listaFifos.size()) {
 
 		        mostrarFifo();
