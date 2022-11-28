@@ -1,5 +1,7 @@
 package procesos;
 
+import java.text.DecimalFormat;
+
 public class Proceso {
     
     // Variables que vendrán declaradas en la creación del objeto
@@ -10,7 +12,15 @@ public class Proceso {
     // Variables a calcular a partir de las ya declaradas
     private int tiempoEspera = 0;
     private int tiempoRetorno = 0;
-    private double indicePenalizacion = 0; // Calculada a partir de tiempoRetorno / tiempoEjecucion.
+
+    // Calculado a partir de tiempoRetorno / tiempoEjecucion sin control de decimales
+    private String indicePenalizacionDecimales = "";
+
+    // Convercion de indicePenalizacionDecimales a 2 decimales
+    private double indicePenalizacion = 0; 
+    
+    // Objeto para declarar el número de decimales que puede guardar indicePenalizacion
+    DecimalFormat df = new DecimalFormat("#.00");
 
     public Proceso (char nombreProceso, int tiempoLlegada, int tiempoEjecucion){
         
@@ -55,7 +65,11 @@ public class Proceso {
 
     public void setIndicePenalizacion () {
         System.out.println("Tiempo Retorno: " + tiempoRetorno + "\nTiempoEjecución: " + tiempoEjecucion);
-        indicePenalizacion = (double)tiempoRetorno / (double)tiempoEjecucion;
+
+        System.out.println(indicePenalizacionDecimales);
+        /* Toma los dos valores, los combierte a ambos en Double, los divide, el resultado se envía al 
+        método round del objeto Math (para delimitar los decimales) y el resultado, lo guarda en indicePenalizacion */
+        indicePenalizacion = Math.round((((double)tiempoRetorno / (double)tiempoEjecucion) * 100d) / 100d);
     }
 
 }
