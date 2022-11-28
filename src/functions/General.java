@@ -168,4 +168,29 @@ abstract class General {
         procesoPeorTratado = nombreMayor;
     }
 
+    public void impresionTablaGeneral () {
+        System.out.println("Proceso\tTiempo de Llegada\t" +
+            "Tiempo de ejecución\tTiempo de Espera\tTiempo de" +
+            " retorno\tÍndice de penalización\n");
+        for (Proceso iterable : procesos) {
+            System.out.println(iterable.getNombreProceso() + "\t|\t" +
+                iterable.getTiempoLlegada() + "\t\t|\t" +
+                iterable.getTiempoEjecucion() + "\t\t|\t" + 
+                iterable.getTiempoEspera() + "\t\t|\t" +
+                iterable.getTiempoRetorno() + "\t\t|\t" +
+                iterable.getIndicePenalizacion() + "\t\t|\n");
+        }
+        System.out.println();
+
+        // Impresión de la tabla en la que se simula la ejecución de los procesos
+        for (int j = 0; j < procesosN; j++){
+
+            for (int i = 0; i < tiempoEjecucionTotal; i++) {
+                System.out.print(tabla[i][j] + " | ");
+            }
+            System.out.println();
+
+        }
+        System.out.println();
+    }
 }
