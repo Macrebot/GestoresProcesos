@@ -27,8 +27,13 @@ public class App {
                 System.out.println(opciones);
                 System.out.println("Que opción desea realizar?: ");
                 menu = sc.nextInt();
+
+                // Limpia la consola
+                System.out.println("\033[H\033[2J");
+                System.out.flush();
+
                 if (menu < 1 || menu > 6) {
-                    System.out.println("Incorrecto, introduzca una opción válida.");
+                    System.out.println("INCORRECTO, introduzca una opción válida.\n");
                 }
             }
 

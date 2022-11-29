@@ -64,7 +64,17 @@ public class Administracion {
     // Método para crear un nuevo gestor
     public void crearGestor() {
         Fifo objetoFifo = new Fifo();
+
+        // Algoritmo de organización
         objetoFifo.ordenarFifo();
+        
+        // Calcular las medias del objeto
+        objetoFifo.setTiempoEsperaMedio();
+        objetoFifo.setTiempoRetornoMedio();
+        objetoFifo.setIndicePenalizacionMedio();
+
+        objetoFifo.setProcesoPeorTratado();
+
         System.out.println("Ejecucion del crearGestor()");
         listaFifos.add(objetoFifo);
     }
