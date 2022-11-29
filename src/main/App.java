@@ -10,6 +10,8 @@ public class App {
 	    Administracion admin = new Administracion();
         boolean dc = true;
         int menu = -1;
+
+        admin.limpiarConsola();
         
         String opciones =   "1. Crear Nuevo Gestor rápido\n" + 
                             "2. Crear Nuevo Gestor detallado\n" + 
@@ -28,9 +30,7 @@ public class App {
                 System.out.println("Que opción desea realizar?: ");
                 menu = sc.nextInt();
 
-                // Limpia la consola
-                System.out.println("\033[H\033[2J");
-                System.out.flush();
+                admin.limpiarConsola();
 
                 if (menu < 1 || menu > 6) {
                     System.out.println("INCORRECTO, introduzca una opción válida.\n");
@@ -41,23 +41,28 @@ public class App {
             switch (menu) {
                 case 1:
                     admin.crearGestor();
+                    admin.limpiarConsola();
                     break;
 
                 case 2:
                     System.out.println("Introduce el nombre del Gestor");
                     admin.crearGestor(sc.nextLine());
+                    admin.limpiarConsola();
                     break;
 
                 case 3:
                     admin.mostrarGestores();
+                    admin.limpiarConsola();
                     break;
 
                 case 4:
                     admin.editarGestor();
+                    admin.limpiarConsola();
                     break;
 
                 case 5:
                     admin.borrarGestor();
+                    admin.limpiarConsola();
                     break;
 
                 case 6:
@@ -68,7 +73,7 @@ public class App {
                     break;
             }
 
-        menu = -1;
+            menu = -1;
         }
 
 

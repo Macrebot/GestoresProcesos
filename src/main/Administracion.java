@@ -15,6 +15,13 @@ public class Administracion {
 
     private int decision = 0; // varible para guardar deciciones temporales durante la ejecución
 
+    // Método para limpiar la consola
+    public void limpiarConsola() {
+        // Limpia la consola
+        System.out.println("\033[H\033[2J");
+        System.out.flush();
+    }
+
     // Método para imprimir por pantalla todos los gestores creados
     public void mostrarGestores() {
 

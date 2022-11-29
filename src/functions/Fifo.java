@@ -5,6 +5,8 @@ import procesos.Proceso;
 
 public class Fifo extends General{
 
+    /* FIFO: First In, First Out */
+
     public Fifo () {
         super();
     }
@@ -58,7 +60,6 @@ public class Fifo extends General{
 
                         // Guarda el proceso en ejecución en su espacio en la tabla
                         tabla[i][procesoEjecutandose] = procesos[procesoEjecutandose].getNombreProceso();
-
 
                     }
                     
