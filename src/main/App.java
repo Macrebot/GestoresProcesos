@@ -1,8 +1,6 @@
 package main;
 
-import java.util.ArrayList;
 import java.util.Scanner;
-import functions.*;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -52,7 +50,6 @@ public class App {
 
                 case 3:
                     admin.mostrarGestores();
-                    admin.limpiarConsola();
                     break;
 
                 case 4:

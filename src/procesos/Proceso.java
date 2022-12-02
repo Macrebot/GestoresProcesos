@@ -13,10 +13,7 @@ public class Proceso {
     private int tiempoEspera = 0;
     private int tiempoRetorno = 0;
 
-    // Calculado a partir de tiempoRetorno / tiempoEjecucion sin control de decimales
-    private String indicePenalizacionDecimales = "";
-
-    // Convercion de indicePenalizacionDecimales a 2 decimales
+    // Calculado a partir de tiempoRetorno / tiempoEjecucion
     private double indicePenalizacion = 0; 
     
     // Objeto para declarar el número de decimales que puede guardar indicePenalizacion

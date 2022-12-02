@@ -1,7 +1,6 @@
 package functions;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -167,7 +166,7 @@ abstract class General {
         System.out.println("Tiempo de Espera Medio: " + String.format("%.2f", this.getTiempoEsperaMedio()));
         System.out.println("Tiempo de Retorno Medio: " + String.format("%.2f", this.getTiempoRetornoMedio()));
         System.out.println("Índice de Penalización Medio: " + String.format("%.2f", this.getIndicePenalizacionMedio()));
-        System.out.println("Proceso Peor Tratado: " + String.format("%.2f", this.getProcesoPeorTratado()) + "\n");
+        System.out.println("Proceso Peor Tratado: " + this.getProcesoPeorTratado() + "\n");
 
         // Impresión de la tabla en la que se simula la ejecución de los procesos
         for (int j = 0; j < procesosN; j++){

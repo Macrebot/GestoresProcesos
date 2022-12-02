@@ -9,10 +9,13 @@ public class Administracion {
     Scanner sc = new Scanner(System.in);
 
     private ArrayList<Fifo> listaFifos = new ArrayList<Fifo>();
-    private ArrayList<Sjf> listaSjf;
-    private ArrayList<Srtf> listaSrtf;
-    private ArrayList<Fcfs> listaFcfs;
-
+    /* 
+        Arrays que aún no están en uso porque no existen los algoritmos
+        private ArrayList<Sjf> listaSjf;
+        private ArrayList<Srtf> listaSrtf;
+        private ArrayList<Fcfs> listaFcfs;
+     */
+    
     private int decision = 0; // varible para guardar deciciones temporales durante la ejecución
 
     // Método para limpiar la consola
