@@ -1,8 +1,5 @@
 package functions;
 
-import java.util.ArrayList;
-import procesos.Proceso;
-
 public class Fifo extends General{
 
     /* FIFO: First In, First Out */
