@@ -4,6 +4,8 @@ public class Fifo extends General{
 
     /* FIFO: First In, First Out */
 
+    // * CONSTRUCTORES
+
     public Fifo () {
         super();
     }
@@ -11,6 +13,8 @@ public class Fifo extends General{
     public Fifo (String nombre) {
         super(nombre, "FIFO");
     }
+
+    // * MÉTODOS
 
     public void ordenarFifo () {
         /* Un bucle que recorrerá toda la tabla para simular la

@@ -1,8 +1,8 @@
 package procesos;
 
-import java.text.DecimalFormat;
-
 public class Proceso {
+
+    // * ATRIBUTOS
     
     // Variables que vendrán declaradas en la creación del objeto
     private char nombreProceso;
@@ -16,8 +16,7 @@ public class Proceso {
     // Calculado a partir de tiempoRetorno / tiempoEjecucion
     private double indicePenalizacion = 0; 
     
-    // Objeto para declarar el número de decimales que puede guardar indicePenalizacion
-    DecimalFormat df = new DecimalFormat("#.00");
+    // * CONSTRUCTOR
 
     public Proceso (char nombreProceso, int tiempoLlegada, int tiempoEjecucion){
         
@@ -27,8 +26,11 @@ public class Proceso {
         this.tiempoEjecucion = tiempoEjecucion;
     }
 
+    // * MÉTODOS
+
+    // * GETTERS
+
     // Métodos para la gestión del proceso
-    // Getters
     public char getNombreProceso (){ return nombreProceso; }
     public int getTiempoLlegada () { return tiempoLlegada; }
     public int getTiempoEjecucion () { return tiempoEjecucion; }
@@ -37,7 +39,8 @@ public class Proceso {
     public int getTiempoRetorno () { return tiempoRetorno; }
     public double getIndicePenalizacion () { return indicePenalizacion; }
     
-    // Setters
+    // * SETTERS
+
     // Variables que vendrán declaradas en la creación del objeto
     public void setNombreProceso (char nombreProceso) {
         this.nombreProceso = nombreProceso;

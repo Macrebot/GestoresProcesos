@@ -6,6 +6,8 @@ import java.util.Scanner;
 
 import procesos.Proceso;
 
+/* La clase sólo va a poder ser heredada por otros objetos, pero no va a ser creada en
+un objeto directamente */
 abstract class General {
     Scanner sc = new Scanner(System.in);
 
