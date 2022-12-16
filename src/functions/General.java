@@ -149,6 +149,8 @@ abstract class General {
 
     // Impresión de la tabla con los procesos y resultados
     public void impresionTablaGeneral () {
+    	
+    	// todo: Hacer de la anchura de la tabla el total de todos los tiempos de ejecución
 
         System.out.println("\n----------------------------------------");
         System.out.println("Proceso\tTiempo de Llegada\t" +
@@ -165,10 +167,17 @@ abstract class General {
         System.out.println();
 
         // Impresión de las medias
-        System.out.println("Tiempo de Espera Medio: " + String.format("%.2f", this.getTiempoEsperaMedio()));
-        System.out.println("Tiempo de Retorno Medio: " + String.format("%.2f", this.getTiempoRetornoMedio()));
-        System.out.println("Índice de Penalización Medio: " + String.format("%.2f", this.getIndicePenalizacionMedio()));
-        System.out.println("Proceso Peor Tratado: " + this.getProcesoPeorTratado() + "\n");
+        System.out.println("Tiempo de Espera Medio: " +
+        		String.format("%.2f", this.getTiempoEsperaMedio()));
+
+        System.out.println("Tiempo de Retorno Medio: " +
+        		String.format("%.2f", this.getTiempoRetornoMedio()));
+
+        System.out.println("Índice de Penalización Medio: " +
+        		String.format("%.2f", this.getIndicePenalizacionMedio()));
+
+        System.out.println("Proceso Peor Tratado: " +
+        		this.getProcesoPeorTratado() + "\n");
 
         // Impresión de la tabla en la que se simula la ejecución de los procesos
         for (int j = 0; j < procesosN; j++){

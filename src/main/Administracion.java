@@ -12,8 +12,9 @@ public class Administracion {
     /* Creación de los arreglos que guardarán todos los objetos de los distintos
     algoritmos */
     private ArrayList<Fifo> listaFifos = new ArrayList<Fifo>();
+
+    // todo: Arrays que aún no están en uso porque no existen los algoritmos
     /* 
-        TODO: Arrays que aún no están en uso porque no existen los algoritmos
         private ArrayList<Sjf> listaSjf;
         private ArrayList<Srtf> listaSrtf;
         private ArrayList<Fcfs> listaFcfs;

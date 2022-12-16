@@ -17,6 +17,8 @@ public class Fifo extends General{
     // * MÉTODOS
 
     public void ordenarFifo () {
+    	System.out.println("Incio de ordenarFifo");
+    	
         /* Un bucle que recorrerá toda la tabla para simular la
         ejecución de los procesos */
 
@@ -95,6 +97,7 @@ public class Fifo extends General{
            
         }
         
+        System.out.println("Fin de ordenar Fifo");
     }
 
 }
