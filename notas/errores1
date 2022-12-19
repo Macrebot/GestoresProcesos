@@ -1,0 +1,11 @@
+Númro de procesos: 3
+
+Proceso 1: I 3 3
+Proceso 2: Y 0 2
+Proceso 3: R 1 4
+
+Prueba 2:
+
+Proceso 1: Y 0 2
+Proceso 2: I 3 3
+Proceso 3: R 1 4

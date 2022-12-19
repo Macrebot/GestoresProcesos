@@ -46,7 +46,8 @@ public class Fifo extends General{
                     if (procesos[j].getTiempoLlegada() == i) {
                         procesosEnFila.addLast(j); // Lo envía al final de la fila
                     }
-                        // Si no hay procesos ejecutándose
+
+                    // Si no hay procesos ejecutándose
                     if (procesoEjecutandose < 0){
 
                         // Toma el primer valor en fila para ejecutarlo
@@ -71,12 +72,12 @@ public class Fifo extends General{
                         tabla[i][j] = procesos[procesoEjecutandose].getNombreProceso();
                     }
 
-                    // Si el espacio actual está vacío...
+                    // Si el espacio actual de la tabla está vacío...
                     else if (tabla[i][j] == '\u0000'){
 
                         // Si el proceso ejecutándo es igual a la posición actual, escribe una W a la tabla.
                         if (procesoEjecutandose == j){
-                            tabla[i][j] = 'W';
+                            tabla[i][j] = procesos[procesoEjecutandose].getNombreProceso();
 
                         // Guarda que el proceso no está en ejecución, en su espacio de la tabla
                         } else {
